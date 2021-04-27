@@ -1,0 +1,120 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model CommentShow
+@inject SignInManager<ScriptUser> _signInManager
+@inject UserManager<ScriptUser> _userManager
+@{
+    ViewData["Title"] = "介绍";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="PlaceHolderHere"></div>
+
+<h1>@Html.DisplayFor(model => model.Script.Name)</h1>
+
+<div>
+    <hr />
+    @if (Model.Script.Cover != null)
+    {
+        <img class="card-img-top" style="object-fit: cover" src="/image/@Model.Script.Cover" alt="Card image cap">
+    }
+    else
+    {
+        <img class="card-img-top" style="object-fit: cover" src="/image/Default.png" alt="Card image cap">
+    }
+    <dl class="row">
+        <dt class="col-sm-2" style="margin-top: 20px;">
+            @Html.DisplayNameFor(model => model.Script.Rate)
+        </dt>
+        <dd class="col-sm-10" style="margin-top: 20px;">
+            @Html.DisplayFor(model => model.Script.Rate)
+        </dd>
+        <dt class="col-sm-2" style="margin-top: 20px;">
+            @Html.DisplayNameFor(model => model.Script.Introduction)
+        </dt>
+        <dd class="col-sm-10" style="margin-top: 20px;">
+            @Html.DisplayFor(model => model.Script.Introduction)
+        </dd>
+        <dt class="col-sm-2" style="margin-top: 20px;">
+            @Html.DisplayNameFor(model => model.Script.Players)
+        </dt>
+        <dd class="col-sm-10" style="margin-top: 20px;">
+            @Html.DisplayFor(model => model.Script.Players)
+        </dd>
+        <dt class="col-sm-2" style="margin-top: 20px;">
+            @Html.DisplayNameFor(model => model.Script.EmotionDegree)
+        </dt>
+        <dd class="col-sm-10" style="margin-top: 20px;">
+            @Html.DisplayFor(model => model.Script.EmotionDegree)
+        </dd>
+        <dt class="col-sm-2" style="margin-top: 20px;">
+            @Html.DisplayNameFor(model => model.Script.InferenceDifficulty)
+        </dt>
+        <dd class="col-sm-10" style="margin-top: 20px;">
+            @Html.DisplayFor(model => model.Script.InferenceDifficulty)
+        </dd>
+        <dt class="col-sm-2" style="margin-top: 20px;">
+            @Html.DisplayNameFor(model => model.Script.DmImportance)
+        </dt>
+        <dd class="col-sm-10" style="margin-top: 20px;">
+            @Html.DisplayFor(model => model.Script.DmImportance)
+        </dd>
+    </dl>
+</div>
+
+<div style="margin-top: 20px">
+    <p style="font-size: larger"><b>评论区 </b></p>
+    @if (Model.Comments.Count == 0)
+    {
+        <p style="margin-left: auto;margin-right: auto;">还没有评论哦，快来留下你的游玩感受。</p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th width="20%">用户</th>
+                    <th width="10%">打星</th>
+                    <th width="70%">评价</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var comment in Model.Comments)
+                {
+                    <tr>
+                        <td>
+                            <img style="width: 40px; height: 40px; object-fit: cover; border-radius: 30px" src="@comment.Avatar" alt="">
+                            @comment.UserNickName
+                        </td>
+                        <td>
+                            @comment.Rate
+                        </td>
+                        <td>
+                            @comment.CommentText
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    @if (_signInManager.IsSignedIn(User))
+    {
+        <button type="button" class="btn btn-primary" data-toggle="ajax-modal" data-target="#add-comment"
+                data-url="@Url.Action("CommentCreate","Scripts",new{scriptId=ViewData["ScriptId"]})">
+            添加评论
+        </button>
+    }
+    else
+    {
+        <div style="display: flex;">
+            <p>
+                你还未登入，请先
+            </p>
+            <a asp-area="Identity" asp-page="/Account/Login">
+                登入
+            </a>
+            <p>
+                后在评论
+            </p>
+        </div>
+    }
+</div>

@@ -1,0 +1,138 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+* {
+    box-sizing: border-box;
+}
+/* basic stylings ------------------------------------------ */
+.container {
+    font-family: 'Roboto';
+    width: 600px;
+    margin: 30px auto 0;
+    display: block;
+    background: #FFF;
+    padding: 10px 50px 50px;
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer a {
+    color: #53B2C8;
+}
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+body {
+    margin: 0;
+    padding: 1.5em;
+    font-family: sans-serif;
+    line-height: 1.5;
+}
+
+p {
+    margin: 0 0 1.5em;
+    padding: 0;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+.starRating:not(old) {
+    display: inline-block;
+    width: 7.5em;
+    height: 1.5em;
+    overflow: hidden;
+    vertical-align: bottom;
+}
+.starRating:not(old) > input {
+    margin-right: -100%;
+    opacity: 0;
+}
+.starRating:not(old) > label {
+    display: block;
+    float: right;
+    position: relative;
+    background: url('star-off.svg');
+    background-size: contain;
+}
+.starRating:not(old) > label:before {
+    content: '';
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    background: url('star-on.svg');
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+}
+.starRating:not(old) > label:hover:before,
+.starRating:not(old) > label:hover ~ label:before,
+.starRating:not(:hover) > :checked ~ label:before {
+    opacity: 1;
+}
+

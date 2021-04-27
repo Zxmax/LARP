@@ -1,0 +1,64 @@
+﻿@model LARP.Models.Script
+
+@{
+    ViewData["Title"] = "删除剧本条目";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>删除剧本条目</h1>
+
+<h3>你确定要删除此剧本杀嘛？</h3>
+<div>
+    <h4>剧本</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Rate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Introduction)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Introduction)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Players)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Players)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EmotionDegree)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EmotionDegree)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.InferenceDifficulty)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.InferenceDifficulty)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DmImportance)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DmImportance)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ScriptId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">返回剧本杀列表</a>
+    </form>
+</div>

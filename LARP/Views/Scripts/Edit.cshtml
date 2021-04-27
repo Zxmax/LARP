@@ -1,0 +1,71 @@
+﻿@model LARP.Models.Script
+
+@{
+    ViewData["Title"] = "编辑";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>编辑</h1>
+
+<h4>剧本</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ScriptId" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rate" class="control-label"></label>
+                <input asp-for="Rate" class="form-control" />
+                <span asp-validation-for="Rate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Introduction" class="control-label"></label>
+                <input asp-for="Introduction" class="form-control" />
+                <span asp-validation-for="Introduction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Players" class="control-label"></label>
+                <input asp-for="Players" class="form-control" />
+                <span asp-validation-for="Players" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmotionDegree" class="control-label"></label>
+                <input asp-for="EmotionDegree" class="form-control" />
+                <span asp-validation-for="EmotionDegree" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InferenceDifficulty" class="control-label"></label>
+                <input asp-for="InferenceDifficulty" class="form-control" />
+                <span asp-validation-for="InferenceDifficulty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DmImportance" class="control-label"></label>
+                <input asp-for="DmImportance" class="form-control" />
+                <span asp-validation-for="DmImportance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoverFile" class="control-label"></label>
+                <input asp-for="CoverFile" accept="image/*" />
+                <span asp-validation-for="CoverFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<div>
+    <a asp-action="Index">返回剧本杀列表</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

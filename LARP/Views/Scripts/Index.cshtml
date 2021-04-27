@@ -1,0 +1,67 @@
+﻿@model LARP.Services.PaginatedList<LARP.Models.Script>
+
+@{
+    ViewData["Title"] = "首页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<form method="get" asp-action="Index">
+    <p>
+        <input type="search" placeholder="请输入要查找的剧本杀关键字" value="@ViewData["scriptString"]" name="scriptSearch" style="width: 500px;"/>
+        <input type="submit" value="Search" class="btn btn-primary"/>
+        <a asp-action="Index">显示所有剧本杀</a>
+    </p>
+</form>
+
+<div class="row">
+    @foreach (var item in Model)
+    {<div class="col-sm-3">
+            <div class="card" style="width:270px;">
+                @if (item.Cover != null)
+                {
+                    <img class="card-img-top" style="width: 269px; height: 350px; object-fit: cover" src="/image/@item.Cover" alt="Card image cap">
+                }
+                else
+                {
+                    <img class="card-img-top" style="width: 269px; height: 350px; object-fit: cover" src="/image/Default.png" alt="Card image cap">
+                }
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    @if (item.Introduction.Length < 32)
+                    {
+                        <p class="card-text">@(item.Introduction[..^1])...</p>
+                    }
+                    else
+                    {
+                        <p class="card-text">@(item.Introduction[..32])...</p>
+                    }
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a>评分： </a>@item.Rate</li>
+                    <li class="list-group-item"><a>人数： </a>@item.Players</li>
+                </ul>
+                <div class="card-body">
+                    <a asp-action="Details" asp-route-id="@item.ScriptId">详细内容</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+<div style="margin-top: 20px;">
+    <a asp-action="Index"
+       asp-route-pageNumber="@(Model.PageIndex - 1)"
+       class="btn btn-primary @prevDisabled">
+        上一页
+    </a>
+    <a asp-action="Index"
+       asp-route-pageNumber="@(Model.PageIndex + 1)"
+       class="btn btn-primary @nextDisabled">
+        下一页
+    </a>
+</div>

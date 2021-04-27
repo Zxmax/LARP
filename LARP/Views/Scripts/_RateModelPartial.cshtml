@@ -1,0 +1,53 @@
+﻿@model LARP.Models.Comment
+
+<div class="modal fade" id="addComment" tabindex="-1" role="dialog" aria-labelledby="addContactLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="addCommentLabel">发表评论</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span></button>
+            </div>
+
+            <div class="modal-body">
+                <form asp-action="CommentCreate">
+                    <div class="form-group" style="display: none">
+                        <label asp-for="ScriptId" class="control-label"></label>
+                        <input asp-for="ScriptId" class="form-control" value="@Model.ScriptId" readonly="readonly"/>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Rate" class="control-label"></label>
+                        <input asp-for="Rate" class="form-control" value="@Model.Rate" />
+                        <span asp-validation-for="Rate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EmotionDegree" class="control-label"></label>
+                        <input asp-for="EmotionDegree" class="form-control" value="@Model.EmotionDegree" />
+                        <span asp-validation-for="EmotionDegree" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="InferenceDifficulty" class="control-label"></label>
+                        <input asp-for="InferenceDifficulty" class="form-control" value="@Model.InferenceDifficulty" />
+                        <span asp-validation-for="InferenceDifficulty" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DmImportance" class="control-label"></label>
+                        <input asp-for="DmImportance" class="form-control" value="@Model.DmImportance" />
+                        <span asp-validation-for="DmImportance" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CommentText" class="control-label"></label>
+                        <textarea asp-for="CommentText" class="form-control text-wrap:normal" type="text" placeholder="请在这填写你的评论" value="@Model.CommentText"></textarea>
+                        <span asp-validation-for="CommentText" class="text-danger"></span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" data-save="modal">保存</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
