@@ -387,7 +387,6 @@ E:\SelfProject\Net5\LARP-NET5\LARP\obj\Debug\net5.0\Razor\Areas\Identity\Pages\E
 E:\SelfProject\Net5\LARP-NET5\LARP\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 E:\SelfProject\Net5\LARP-NET5\LARP\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 E:\SelfProject\Net5\LARP-NET5\LARP\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-E:\SelfProject\Net5\LARP-NET5\LARP\obj\Debug\net5.0\Razor\Pages\_ValidationScriptsPartial.cshtml.g.cs
 E:\SelfProject\Net5\LARP-NET5\LARP\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 E:\SelfProject\Net5\LARP-NET5\LARP\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 E:\SelfProject\Net5\LARP-NET5\LARP\obj\Debug\net5.0\Razor\Views\Scripts\Create.cshtml.g.cs
@@ -415,3 +414,4 @@ E:\SelfProject\Net5\LARP-NET5\LARP\obj\Debug\net5.0\LARP.dll
 E:\SelfProject\Net5\LARP-NET5\LARP\obj\Debug\net5.0\ref\LARP.dll
 E:\SelfProject\Net5\LARP-NET5\LARP\obj\Debug\net5.0\LARP.pdb
 E:\SelfProject\Net5\LARP-NET5\LARP\obj\Debug\net5.0\LARP.genruntimeconfig.cache
+E:\SelfProject\Net5\LARP-NET5\LARP\obj\Debug\net5.0\Razor\Pages\_ValidationScriptsPartial.cshtml.g.cs

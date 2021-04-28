@@ -14,29 +14,73 @@
                         <label asp-for="ScriptId" class="control-label"></label>
                         <input asp-for="ScriptId" class="form-control" value="@Model.ScriptId" readonly="readonly"/>
                     </div>
-                    <div class="form-group">
+                   <div class="form-group">
                         <label asp-for="Rate" class="control-label"></label>
-                        <input asp-for="Rate" class="form-control" value="@Model.Rate" />
-                        <span asp-validation-for="Rate" class="text-danger"></span>
+                       <div class="rate ">
+                           <input asp-for="Rate" type="radio" id="star5_rate" name="Rate" value="5" checked="@(Model.Rate==StarRate.FiveStar)"/>
+                           <label for="star5_rate" title="text">5 stars</label>
+                           <input asp-for="Rate" type="radio" id="star4_rate" name="Rate" value="4" checked="@(Model.Rate==StarRate.FourStar)"/>
+                           <label for="star4_rate" title="text">4 stars</label>
+                           <input asp-for="Rate" type="radio" id="star3_rate" name="Rate" value="3" checked="@(Model.Rate==StarRate.ThreeStar)"/>
+                           <label for="star3_rate" title="text">3 stars</label>
+                           <input asp-for="Rate" type="radio" id="star2_rate" name="Rate" value="2" checked="@(Model.Rate==StarRate.TwoStar)"/>
+                           <label for="star2_rate" title="text">2 stars</label>
+                           <input asp-for="Rate" type="radio" id="star1_rate" name="Rate" value="1" checked="@(Model.Rate==StarRate.OneStar)"/>
+                           <label for="star1_rate" title="text">1 star</label>
+                       </div>
                     </div>
+                    <hr />
                     <div class="form-group">
                         <label asp-for="EmotionDegree" class="control-label"></label>
-                        <input asp-for="EmotionDegree" class="form-control" value="@Model.EmotionDegree" />
-                        <span asp-validation-for="EmotionDegree" class="text-danger"></span>
+                        <div class="rate ">
+                            <input asp-for="EmotionDegree" type="radio" id="star5_ed" name="EmotionDegree" value="5" checked="@(Model.EmotionDegree==StarRate.FiveStar)"/>
+                            <label for="star5_ed" title="text">5 stars</label>                                                        
+                            <input asp-for="EmotionDegree" type="radio" id="star4_ed" name="EmotionDegree" value="4" checked="@(Model.EmotionDegree==StarRate.FourStar)"/>
+                            <label for="star4_ed" title="text">4 stars</label>                                                        
+                            <input asp-for="EmotionDegree" type="radio" id="star3_ed" name="EmotionDegree" value="3" checked="@(Model.EmotionDegree==StarRate.ThreeStar)"/>
+                            <label for="star3_ed" title="text">3 stars</label>                                                        
+                            <input asp-for="EmotionDegree" type="radio" id="star2_ed" name="EmotionDegree" value="2" checked="@(Model.EmotionDegree==StarRate.TwoStar)"/>
+                            <label for="star2_ed" title="text">2 stars</label>                                                        
+                            <input asp-for="EmotionDegree" type="radio" id="star1_ed" name="EmotionDegree" value="1" checked="@(Model.EmotionDegree==StarRate.OneStar)"/>
+                            <label for="star1_ed" title="text">1 star</label>
+                        </div>
                     </div>
+                    <hr />
                     <div class="form-group">
                         <label asp-for="InferenceDifficulty" class="control-label"></label>
-                        <input asp-for="InferenceDifficulty" class="form-control" value="@Model.InferenceDifficulty" />
-                        <span asp-validation-for="InferenceDifficulty" class="text-danger"></span>
+                        <div class="rate ">
+                            <input asp-for="InferenceDifficulty" type="radio" id="star5_id" name="InferenceDifficulty" value="5" checked="@(Model.InferenceDifficulty==StarRate.FiveStar)"/>
+                            <label for="star5_id" title="text">5 stars</label>
+                            <input asp-for="InferenceDifficulty" type="radio" id="star4_id" name="InferenceDifficulty" value="4" checked="@(Model.InferenceDifficulty==StarRate.FourStar)"/>
+                            <label for="star4_id" title="text">4 stars</label>
+                            <input asp-for="InferenceDifficulty" type="radio" id="star3_id" name="InferenceDifficulty" value="3" checked="@(Model.InferenceDifficulty==StarRate.ThreeStar)"/>
+                            <label for="star3_id" title="text">3 stars</label>
+                            <input asp-for="InferenceDifficulty" type="radio" id="star2_id" name="InferenceDifficulty" value="2" checked="@(Model.InferenceDifficulty==StarRate.TwoStar)"/>
+                            <label for="star2_id" title="text">2 stars</label>
+                            <input asp-for="InferenceDifficulty" type="radio" id="star1_id" name="InferenceDifficulty" value="1" checked="@(Model.InferenceDifficulty==StarRate.OneStar)"/>
+                            <label for="star1_id" title="text">1 star</label>
+                        </div>
                     </div>
+                    <hr />
                     <div class="form-group">
                         <label asp-for="DmImportance" class="control-label"></label>
-                        <input asp-for="DmImportance" class="form-control" value="@Model.DmImportance" />
-                        <span asp-validation-for="DmImportance" class="text-danger"></span>
+                        <div class="rate ">
+                            <input asp-for="DmImportance" type="radio" id="star5_di" name="DmImportance" value="5" checked="@(Model.DmImportance==StarRate.FiveStar)"/>
+                            <label for="star5_di" title="text">5 stars</label>                                                      
+                            <input asp-for="DmImportance" type="radio" id="star4_di" name="DmImportance" value="4" checked="@(Model.DmImportance==StarRate.FourStar)"/>
+                            <label for="star4_di" title="text">4 stars</label>                                                      
+                            <input asp-for="DmImportance" type="radio" id="star3_di" name="DmImportance" value="3" checked="@(Model.DmImportance==StarRate.ThreeStar)"/>
+                            <label for="star3_di" title="text">3 stars</label>                                                      
+                            <input asp-for="DmImportance" type="radio" id="star2_di" name="DmImportance" value="2" checked="@(Model.DmImportance==StarRate.TwoStar)"/>
+                            <label for="star2_di" title="text">2 stars</label>                                                      
+                            <input asp-for="DmImportance" type="radio" id="star1_di" name="DmImportance" value="1" checked="@(Model.DmImportance==StarRate.OneStar)"/>
+                            <label for="star1_di" title="text">1 star</label>
+                        </div>
                     </div>
+                    <hr />
                     <div class="form-group">
                         <label asp-for="CommentText" class="control-label"></label>
-                        <textarea asp-for="CommentText" class="form-control text-wrap:normal" type="text" placeholder="请在这填写你的评论" value="@Model.CommentText"></textarea>
+                        <textarea  asp-for="CommentText" class="form-control text-wrap:normal" type="text" placeholder="请在这填写你的评论" value="@Model.CommentText"></textarea>
                         <span asp-validation-for="CommentText" class="text-danger"></span>
                     </div>
                 </form>

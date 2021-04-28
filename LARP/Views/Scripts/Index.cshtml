@@ -7,6 +7,10 @@
 
 
 <form method="get" asp-action="Index">
+    <input type="search" name="search" pattern=".*\S.*" required>
+    <button class="search-btn" type="submit">
+        <span>Search</span>
+    </button>
     <p>
         <input type="search" placeholder="请输入要查找的剧本杀关键字" value="@ViewData["scriptString"]" name="scriptSearch" style="width: 500px;"/>
         <input type="submit" value="Search" class="btn btn-primary"/>
@@ -16,7 +20,7 @@
 
 <div class="row">
     @foreach (var item in Model)
-    {<div class="col-sm-3">
+    {<div class="col-sm-3" style="margin-top: 20px;">
             <div class="card" style="width:270px;">
                 @if (item.Cover != null)
                 {

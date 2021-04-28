@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using LARP.Models;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using LARP.Services;
+using Microsoft.Extensions.Logging;
 
 namespace LARP
 {

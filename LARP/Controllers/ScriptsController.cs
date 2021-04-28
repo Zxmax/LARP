@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LARP.Data;
 using LARP.Models;
 using LARP.Services;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.Logging;
 
 namespace LARP.Controllers
 {
@@ -22,7 +19,10 @@ namespace LARP.Controllers
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ScriptUser> _userManager;
         private readonly IWebHostEnvironment _webHostEnvironment;
-        public ScriptsController(ApplicationDbContext context, UserManager<ScriptUser> userManager, IWebHostEnvironment webHostEnvironment)
+        public ScriptsController(
+            ApplicationDbContext context,
+            UserManager<ScriptUser> userManager, 
+            IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
             _userManager = userManager;
@@ -33,7 +33,7 @@ namespace LARP.Controllers
         public async Task<IActionResult> Index()
         {
             var scriptList = await _context.Scripts.ToListAsync();
-            return View(scriptList);
+            return View(scriptList as PaginatedList<Script>);
         }
         [HttpGet]
         //GET: Script By SearchString
